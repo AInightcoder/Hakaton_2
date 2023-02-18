@@ -15,14 +15,15 @@ for url in a_title_link[:10]:
     data = soup.find('div', class_='default__section border')
     text_data.append(data.text)
 
+main_url='https://daryo.uz'
 # dict o'zgaruvchisiga ma'lumotlarni qo'shish
 for i in range(len(text_data)):
-    if url is not None and img_data_links[i] is not None:
+    if main_url is not None and img_data_links[i] is not None:
        data_dict = {
            'id' : i,
            "title":title_name_data[i],
-            "img_link": url+img_data_links[i],
-                                'discription': text_data[i]}
+           "img_link": main_url+img_data_links[i],
+           'discription': text_data[i]}
     data_list.append(data_dict)
 # [""url+img_data_links[i], text_data[i]]
 # dict fileni jsonga o'zgartirish
